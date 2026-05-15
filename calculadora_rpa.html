@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Calculadora RPA 2026 Gratuita | Nexus Contábil</title>
+    <meta name="description" content="Emita seu RPA com cálculos automáticos de INSS, IRRF e ISS atualizados para a legislação de 2026.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nexus Contábil | Gestão Estratégica para OSCs">
+    <meta property="og:description" content="Segurança jurídica e inteligência financeira para o Terceiro Setor. Conheça nossa Calculadora RPA.">
+    <meta property="og:url" content="https://nexuscontabil.com.br/index.html">
+    <meta property="og:site_name" content="Nexus Contábil">
+    <meta property="og:image" content="https://nexuscontabil.com.br/og_image.png">
+    <meta property="og:image:type" content="image/png">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* BASE & HERO CALCULADORA */
+        body {
+            background-color: #f4f7f6;
+        }
+
+        .calc-hero {
+            background: var(--verde-escuro);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            border-bottom: 4px solid var(--dourado);
+        }
+
+        .calc-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .calc-hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge-hero {
+            display: inline-block;
+            background: rgba(200, 151, 58, 0.2);
+            color: var(--dourado-claro);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* LAYOUT PRINCIPAL SAAS */
+        .calc-container {
+            max-width: 1300px;
+            margin: -2rem auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+            align-items: start;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* COLUNA: FORMULÁRIO */
+        .form-wrapper {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--borda);
+            padding: 3rem;
+        }
+
+        .step-section {
+            margin-bottom: 3rem;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 1rem;
+        }
+
+        .step-num {
+            background: var(--verde);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--verde-escuro);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--texto-suave);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--verde-escuro);
+            background-color: #f8fafc;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--dourado);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(200, 151, 58, 0.1);
+        }
+
+        input[readonly] {
+            background-color: #e2e8f0;
+            cursor: not-allowed;
+            color: #64748b;
+            border-style: dashed;
+        }
+
+        input:not([readonly]) {
+            background-color: #f8fafc;
+            border-style: solid;
+        }
+
+        .input-error {
+            border-color: #ef4444 !important;
+            background-color: #fef2f2 !important;
+        }
+
+        .error-message {
+            font-size: 0.75rem;
+            color: #ef4444;
+            margin-top: 0.4rem;
+            display: none;
+            font-weight: 600;
+        }
+
+        .input-error+.error-message {
+            display: block;
+        }
+
+        .hint {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* COLUNA: RECIBO STICKY */
+        .receipt-sticky {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .receipt-card {
+            background: var(--verde-escuro);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(10, 79, 79, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .receipt-header {
+            padding: 2rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .receipt-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--dourado-claro);
+            margin-bottom: 0.5rem;
+        }
+
+        .receipt-header p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .receipt-body {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .receipt-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .r-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .r-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: monospace;
+        }
+
+        .r-negative {
+            color: #fca5a5;
+        }
+
+        /* Estilo da Base do IRRF */
+        .base-irrf-row {
+            padding-top: 5px;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .base-irrf-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .base-irrf-value {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            font-family: monospace;
+        }
+
+        .receipt-total {
+            background: white;
+            padding: 2rem;
+            color: var(--verde-escuro);
+            text-align: center;
+        }
+
+        .receipt-total span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--texto-suave);
+            margin-bottom: 0.5rem;
+        }
+
+        .receipt-total .total-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--verde);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            background: var(--dourado);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit:hover {
+            background: #b38530;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(200, 151, 58, 0.3);
+        }
+
+        .btn-submit:disabled {
+            background: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* FAQ SECTION & ACORDEON */
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto 5rem;
+            padding: 0 2rem;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            color: var(--verde);
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--dourado-claro);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--verde-escuro);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--dourado);
+        }
+
+        .faq-icon {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dourado);
+            transition: transform 0.4s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 2rem 1.5rem 2rem;
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--verde);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #ef4444;
+        }
+
+        @media (max-width: 1024px) {
+            .calc-container {
+                grid-template-columns: 1fr;
+            }
+
+            .receipt-sticky {
+                position: relative;
+                top: 0;
+            }
+
+            .form-wrapper {
+                padding: 2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo Nexus Contábil" style="max-height: 50px; width: 220px; display: block;">
+                </a>
+            </div>
+            <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" style="color: var(--dourado);">Home</a></li>
+                    <li><a href="solucoes.html" class="nav-link">Soluções</a></li>
+                    <li><a href="quem_somos.html" class="nav-link">Equipe</a></li>
+                    <li><a href="materiais.html" class="nav-link">Materiais</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li class="nav-destaque"><a href="area_cliente.html" class="btn-nav-outline">Área do Cliente</a></li>
+                    <li class="nav-destaque"><a href="calculadora_rpa.html" class="btn-nav-solid">Calculadora RPA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="calc-hero">
+        <span class="badge-hero">Base Legal eSocial 2026</span>
+        <h1>Emissor Inteligente de RPA</h1>
+        <p>Auditoria tributária em tempo real. Preencha os dados e acompanhe o cálculo exato do seu recibo.</p>
+    </section>
+
+    <main class="calc-container">
+
+        <div class="form-wrapper" data-anime="left">
+            <form action="gerar_pdf.php" method="POST" target="_blank" id="formRpa">
+
+                <div class="step-section">
+                    <div class="step-header">
+                        <div class="step-num">1</div>
+                        <h2 class="step-title">Dados do Profissional</h2>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label>Nome Completo do Autônomo</label>
+                            <input type="text" name="nome_prestador" required placeholder="Ex: João Silva de Souza">
+                        </div>
+                        <div class="form-group">
+                            <label>CPF</label>
+                            <input type="text" name="cpf_prestador" id="cpf" required placeholder="000.000.000-00"
+                                maxlength="14">
+                            <span class="error-message">CPF Inválido</span>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail (Para envio da cópia)</label>
+                            <input type="email" name="email_prestador" required placeholder="seu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>CEP</label>
+                            <input type="text" name="cep_prestador" id="cep" required placeholder="00000-000"
+                                maxlength="9">
+                        </div>
+                        <div class="form-group">
+                            <label>Cidade / UF (Automático)</label>
+                            <input type="text" name="cidade_prestador" id="cidade" required readonly
+                                placeholder="Aguardando CEP...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-section">
+                    <div class="step-header">
+                        <div class="step-num">2</div>
+                        <h2 class="step-title">Tomador (Empresa/OSC)</h2>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>CNPJ da Instituição</label>
+                            <input type="text" name="cnpj_tomador" id="cnpj" required placeholder="00.000.000/0001-00"
+                                maxlength="18">
+                            <span class="error-message">CNPJ Inválido</span>
+                        </div>
+                        <div class="form-group">
+                            <label>CEP Sede</label>
+                            <input type="text" name="cep_tomador" id="cep_tomador" placeholder="00000-000"
+                                maxlength="9">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Razão Social (Auto-busca Receita)</label>
+                            <input type="text" name="empresa_tomador" id="empresa_tomador" required readonly
+                                placeholder="Aguardando CNPJ...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Endereço / Cidade da Sede</label>
+                            <input type="text" name="cidade_tomador" id="cidade_tomador" required readonly
+                                placeholder="Aguardando CNPJ/CEP...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-section">
+                    <div class="step-header">
+                        <div class="step-num">3</div>
+                        <h2 class="step-title">Tributação e Valores</h2>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label>Descrição do Serviço Técnico</label>
+                            <input type="text" name="descricao_servico" required
+                                placeholder="Ex: Auditoria contábil independente referente ao mês 05/2026">
+                        </div>
+                        <div class="form-group">
+                            <label>Valor Bruto (R$)</label>
+                            <input type="text" id="valor_bruto_mascara" required placeholder="R$ 0,00"
+                                class="money calculo-trigger">
+                            <input type="hidden" name="valor_bruto" id="valor_bruto_real">
+                            <span class="hint">Valor total do serviço antes dos descontos.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Alíquota ISS (%)</label>
+                            <input type="number" id="aliquota_iss" name="aliquota_iss" value="0" min="0" max="5"
+                                step="0.01" class="calculo-trigger" placeholder="Ex: 3">
+                            <span class="hint">Varia de 2% a 5% (ou 0% se isento).</span>
+                        </div>
+                        <div class="form-group">
+                            <label>INSS Já Retido no Mês (R$)</label>
+                            <input type="text" id="inss_retido_mascara" placeholder="R$ 0,00"
+                                class="money calculo-trigger">
+                            <input type="hidden" name="inss_retido_mes" id="inss_retido_real" value="0">
+                            <span class="hint">Evita pagamento acima do teto legal.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Qtd. Dependentes Legais</label>
+                            <input type="number" id="dependentes" name="dependentes" value="0" min="0" max="10"
+                                class="calculo-trigger">
+                            <span class="hint">Dedução p/ IRRF: R$ 189,59 cada.</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <aside class="receipt-sticky" data-anime="right">
+            <div class="receipt-card">
+                <div class="receipt-header">
+                    <h3>Memória de Cálculo</h3>
+                    <p>Auditoria em Tempo Real</p>
+                </div>
+
+                <div class="receipt-body">
+                    <div class="receipt-row">
+                        <span class="r-label">Valor Bruto Prestado</span>
+                        <span class="r-value" id="preview-bruto">R$ 0,00</span>
+                    </div>
+                    <div class="receipt-row" style="border-bottom: 1px dashed rgba(255,255,255,0.2);">
+                        <span class="r-label">(-) INSS Retido (11%)</span>
+                        <span class="r-value r-negative" id="preview-inss">R$ 0,00</span>
+                    </div>
+
+                    <div class="base-irrf-row">
+                        <span class="base-irrf-label">Base p/ IRRF:</span>
+                        <span class="base-irrf-value" id="preview-base-irrf">R$ 0,00</span>
+                    </div>
+
+                    <div class="receipt-row">
+                        <span class="r-label">(-) IRRF (Tab. Progressiva)</span>
+                        <span class="r-value r-negative" id="preview-irrf">R$ 0,00</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="r-label">(-) ISS Municipal</span>
+                        <span class="r-value r-negative" id="preview-iss">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="receipt-total">
+                    <span>Valor Líquido a Receber</span>
+                    <div class="total-value" id="preview-liquido">R$ 0,00</div>
+
+                    <button type="submit" form="formRpa" class="btn-submit" id="btn-submit">Emitir Documento
+                        Oficial</button>
+                    <p style="font-size: 0.75rem; color: #94a3b8; margin-top: 1rem; line-height: 1.4;">Ao emitir, um PDF
+                        com QR Code de autenticidade será gerado para prestação de contas.</p>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <section class="faq-section" data-anime="up">
+        <h2 class="faq-title">Guia Definitivo: Tributação do RPA em 2026</h2>
+
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <button class="faq-question">
+                    1. O que muda no Imposto de Renda (IRRF) para Autônomos em 2026?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Em 2026, a tabela progressiva do Imposto de Renda continua a ser o principal balizador para
+                            as retenções de RPA. A principal mudança a observar é a atualização das faixas de isenção e
+                            das parcelas a deduzir. Sempre que o valor líquido (após o desconto do INSS e do redutor)
+                            ultrapassar a primeira faixa de tributação, a empresa contratante é obrigada a reter o IRRF
+                            na fonte. É vital lembrar que o imposto de renda incide sobre o rendimento no momento do
+                            efetivo pagamento (regime de caixa), e não na data da prestação do serviço.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    2. O que é o Redutor Simplificado do IRRF (Faixa de Transição)?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Para simplificar a vida do contribuinte e reduzir a carga tributária das menores faixas, a
+                            Receita Federal permite a aplicação de um 'Desconto Simplificado' mensal diretamente na
+                            fonte. Na prática, em vez de exigir que o autônomo comprove despesas dedutíveis (como
+                            dependentes ou pensão alimentícia) mês a mês, a empresa pagadora pode aplicar este desconto
+                            padrão sobre a base de cálculo do IRRF. A nossa calculadora já analisa automaticamente se é
+                            mais vantajoso usar a dedução legal (por dependentes) ou o redutor simplificado, aplicando a
+                            opção que garante o maior valor líquido na conta do trabalhador.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    3. Como funciona o limite (Teto) de desconto do INSS?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>O desconto padrão do INSS para o profissional autônomo (contribuinte individual) que presta
+                            serviços a uma pessoa jurídica é de <strong>11%</strong>. Contudo, este desconto não é
+                            infinito. Ele está limitado ao <strong>Teto Previdenciário</strong> do ano vigente. Se o
+                            profissional já sofreu retenção de INSS por prestar serviços a outras empresas no mesmo mês
+                            e atingiu o teto, ele deve apresentar uma declaração à nova empresa contratante. Nesse caso,
+                            a empresa não fará um novo desconto de 11%, evitando que o profissional pague impostos além
+                            do limite legal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    4. O autônomo precisa pagar o INSS Patronal (Cota de 20%)?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>Não. Um erro muito comum é o autônomo achar que vai perder 31% do seu dinheiro. A retenção no
+                            RPA do prestador é de apenas <strong>11%</strong>. Os outros <strong>20%</strong> referentes
+                            à Cota Patronal Previdenciária (CPP) são uma obrigação exclusiva da <strong>empresa
+                                contratante</strong>. Ou seja, é um custo a mais para a empresa, que deve ser pago
+                            através da guia DCTFWeb, e não um valor que é retirado do bolso do profissional. <em>Nota:
+                                Organizações com certificação CEBAS ou empresas do Simples Nacional (Anexos I a III e V)
+                                são isentas ou têm regras diferentes para essa cota patronal de 20%.</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    5. Quais são as regras para a retenção do ISS Municipal no RPA?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>O Imposto Sobre Serviços (ISS) é um tributo municipal, o que significa que as regras variam
+                            de cidade para cidade. A alíquota geralmente flutua entre <strong>2% e 5%</strong>. O ISS
+                            deve ser retido no RPA caso o profissional não tenha cadastro na prefeitura local como
+                            autônomo (Inscrição Municipal ativa). Se ele for cadastrado e pagar o ISS de forma fixa
+                            anual, a empresa contratante não precisa reter este valor no recibo, bastando que o
+                            profissional apresente o comprovante de regularidade municipal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    6. Com a NFS-e Nacional e o eSocial, o RPA vai acabar em 2026?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <p>O documento 'RPA' não vai acabar, mas a forma como é fiscalizado mudou radicalmente. Com a
+                            consolidação do eSocial e da EFD-Reinf em 2026, todos os pagamentos feitos a autônomos devem
+                            ser informados eletronicamente ao governo até ao dia 15 do mês seguinte (através do evento
+                            S-1200 do eSocial). Fazer RPAs manuais no Word ou Excel e não os enviar para a contabilidade
+                            gera multas automáticas pesadas para a empresa. A nossa calculadora está parametrizada
+                            exatamente para gerar os dados corretos que a sua contabilidade precisará para preencher o
+                            eSocial sem erros.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <div class="logo-nome" style="color: white; margin-bottom: 1rem;">Nexus Contábil</div>
+                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7;">
+                    Especialistas em gestão contábil, segurança jurídica e transparência para o Terceiro Setor e
+                    Pequenas Empresas em Fortaleza e todo o Brasil.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Institucional</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quem_somos.html">Equipe & Cases</a></li>
+                    <li><a href="materiais.html">Materiais Gratuitos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Soluções</h4>
+                <ul class="footer-links">
+                    <li><a href="solucoes.html">Contabilidade para OSCs</a></li>
+                    <li><a href="solucoes-cebas.html">Certificação CEBAS</a></li>
+                    <li><a href="solucoes-pequenas-empresas.html">Pequenas Empresas & MEIs</a></li>
+                    <li><a href="contato.html">Abertura de Entidades</a></li>
+                    <li><a href="calculadora_rpa.html">Calculadora RPA 2026</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contato & Acesso</h4>
+                <ul class="footer-links">
+                    <li><a href="area_cliente.html" style="color: var(--dourado-claro); font-weight: bold;">Área do
+                            Cliente</a></li>
+                </ul>
+                <div style="margin-top: 1.2rem; color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.9;">
+                    <div>📍 Rua Dona Leopoldina, 800</div>
+                    <div style="padding-left: 1.4rem;">Centro, Fortaleza – CE</div>
+                    <div style="margin-top: 0.4rem;">📞 <a href="tel:+5585998261414"
+                            style="color: rgba(255,255,255,0.65);">(85) 9.9826.1414</a></div>
+                    <div style="margin-top: 0.4rem;">
+                        <a href="https://wa.me/5585998261414" target="_blank" rel="noopener noreferrer"
+                            style="color: #25d366; font-weight: 600;">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 Nexus Contábil. Todos os direitos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="politica_privacidade.html">Política de Privacidade</a>
+                    <span>|</span>
+                    <a href="admin_upload.php" class="admin-link"
+                        style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem;">Acesso Restrito
+                        Nexus Contábil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // 1. ATIVAÇÃO DAS ANIMAÇÕES DE SCROLL
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('anime-visible'); } });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('[data-anime]').forEach((el) => observer.observe(el));
+
+            // 2. ATIVAÇÃO DO ACORDEON (FAQ)
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const button = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
+                button.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+
+                    // Fecha todos os outros antes de abrir o atual
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // 3. LÓGICA E MÁSCARAS DO FORMULÁRIO
+            function validarCPF(cpf) { cpf = cpf.replace(/[^\d]+/g, ''); if (cpf == '' || cpf.length != 11 || /^(\d)\1{10}$/.test(cpf)) return false; let add = 0; for (let i = 0; i < 9; i++) add += parseInt(cpf.charAt(i)) * (10 - i); let rev = 11 - (add % 11); if (rev == 10 || rev == 11) rev = 0; if (rev != parseInt(cpf.charAt(9))) return false; add = 0; for (let i = 0; i < 10; i++) add += parseInt(cpf.charAt(i)) * (11 - i); rev = 11 - (add % 11); if (rev == 10 || rev == 11) rev = 0; if (rev != parseInt(cpf.charAt(10))) return false; return true; }
+            function validarCNPJ(cnpj) { cnpj = cnpj.replace(/[^\d]+/g, ''); if (cnpj == '' || cnpj.length != 14 || /^(\d)\1{13}$/.test(cnpj)) return false; let tamanho = cnpj.length - 2; let numeros = cnpj.substring(0, tamanho); let digitos = cnpj.substring(tamanho); let soma = 0; let pos = tamanho - 7; for (let i = tamanho; i >= 1; i--) { soma += numeros.charAt(tamanho - i) * pos--; if (pos < 2) pos = 9; } let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11; if (resultado != digitos.charAt(0)) return false; tamanho = tamanho + 1; numeros = cnpj.substring(0, tamanho); soma = 0; pos = tamanho - 7; for (let i = tamanho; i >= 1; i--) { soma += numeros.charAt(tamanho - i) * pos--; if (pos < 2) pos = 9; } resultado = soma % 11 < 2 ? 0 : 11 - soma % 11; if (resultado != digitos.charAt(1)) return false; return true; }
+
+            function checarErrosGerais() {
+                const cpfErrado = document.getElementById('cpf').classList.contains('input-error');
+                const cnpjErrado = document.getElementById('cnpj').classList.contains('input-error');
+                document.getElementById('btn-submit').disabled = (cpfErrado || cnpjErrado);
+            }
+
+            document.getElementById('cpf').addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\D/g, "");
+                v = v.replace(/(\d{3})(\d)/, "$1.$2"); v = v.replace(/(\d{3})(\d)/, "$1.$2"); v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+                e.target.value = v;
+                if (e.target.value.length === 14) {
+                    if (!validarCPF(e.target.value)) { e.target.classList.add('input-error'); }
+                    else { e.target.classList.remove('input-error'); }
+                } else { e.target.classList.remove('input-error'); }
+                checarErrosGerais();
+            });
+
+            document.getElementById('cnpj').addEventListener('input', async function (e) {
+                let v = e.target.value.replace(/\D/g, "");
+                v = v.replace(/^(\d{2})(\d)/, "$1.$2");
+                v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+                v = v.replace(/\.(\d{3})(\d)/, ".$1/$2");
+                v = v.replace(/(\d{4})(\d)/, "$1-$2");
+                e.target.value = v;
+
+                let emp = document.getElementById('empresa_tomador');
+                let cid = document.getElementById('cidade_tomador');
+                let cep = document.getElementById('cep_tomador');
+
+                if (e.target.value.length === 18) {
+                    if (!validarCNPJ(e.target.value)) {
+                        e.target.classList.add('input-error');
+                    } else {
+                        e.target.classList.remove('input-error');
+                        emp.value = "Buscando dados na Receita...";
+                        emp.readOnly = true; cid.readOnly = true;
+
+                        let cnpjLimpo = e.target.value.replace(/\D/g, "");
+
+                        // Tenta buscar o CNPJ em múltiplas fontes com fallback automático
+                        const fontes = [
+                            {
+                                url: `https://brasilapi.com.br/api/cnpj/v1/${cnpjLimpo}`,
+                                parse: d => ({ razao: d.razao_social, cidade: `${d.municipio} / ${d.uf}`, cep: d.cep || '' })
+                            },
+                            {
+                                url: `https://publica.cnpj.ws/cnpj/${cnpjLimpo}`,
+                                parse: d => ({ razao: d.razao_social, cidade: `${d.estabelecimento?.cidade?.nome || ''} / ${d.estabelecimento?.estado?.sigla || ''}`, cep: d.estabelecimento?.cep || '' })
+                            },
+                            {
+                                url: `https://receitaws.com.br/v1/cnpj/${cnpjLimpo}`,
+                                parse: d => ({ razao: d.nome, cidade: `${d.municipio} / ${d.uf}`, cep: d.cep || '' })
+                            }
+                        ];
+
+                        let encontrado = false;
+                        for (const fonte of fontes) {
+                            try {
+                                const controller = new AbortController();
+                                const timeout = setTimeout(() => controller.abort(), 5000);
+                                const response = await fetch(fonte.url, { signal: controller.signal });
+                                clearTimeout(timeout);
+                                if (response.ok) {
+                                    const data = await response.json();
+                                    const parsed = fonte.parse(data);
+                                    if (parsed.razao) {
+                                        emp.value = parsed.razao;
+                                        cid.value = parsed.cidade;
+                                        if (parsed.cep) cep.value = parsed.cep.replace(/\D/g,'').replace(/^(\d{5})(\d{3})$/, '$1-$2');
+                                        encontrado = true;
+                                        break;
+                                    }
+                                }
+                            } catch (_) { /* tenta próxima fonte */ }
+                        }
+
+                        if (!encontrado) {
+                            emp.readOnly = false; cid.readOnly = false; emp.value = ""; cid.value = "";
+                            emp.placeholder = "CNPJ não localizado. Digite a Razão Social";
+                            cid.placeholder = "Ex: Fortaleza / CE";
+                        }
+                    }
+                } else {
+                    e.target.classList.remove('input-error');
+                    emp.value = ""; cid.value = "";
+                    emp.readOnly = true; cid.readOnly = true;
+                    emp.placeholder = "Aguardando CNPJ..."; cid.placeholder = "Aguardando CNPJ/CEP...";
+                }
+                checarErrosGerais();
+            });
+
+            document.getElementById('cep').addEventListener('input', function (e) {
+                let v = e.target.value.replace(/\D/g, "");
+                v = v.replace(/^(\d{5})(\d)/, "$1-$2");
+                e.target.value = v;
+                if (v.length === 9) {
+                    fetch(`https://viacep.com.br/ws/${v.replace('-', '')}/json/`)
+                        .then(res => res.json())
+                        .then(data => {
+                            if (!data.erro) {
+                                let cid = document.getElementById('cidade');
+                                cid.value = `${data.localidade} / ${data.uf}`;
+                                cid.readOnly = true;
+                            }
+                        }).catch(() => {
+                            let cid = document.getElementById('cidade');
+                            cid.readOnly = false; cid.value = "";
+                            cid.placeholder = "API indisponível. Digite a Cidade / UF";
+                        });
+                }
+            });
+
+            // 4. MOTOR FINANCEIRO
+            const formatadorBRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            function converterParaFloat(valorFormatado) {
+                if (!valorFormatado) return 0;
+                let limpo = valorFormatado.replace('R$', '').trim().replace(/\./g, '').replace(',', '.');
+                let valor = parseFloat(limpo);
+                return isNaN(valor) ? 0 : valor;
+            }
+
+            const moneyInputs = document.querySelectorAll('.money');
+            moneyInputs.forEach(input => {
+                input.addEventListener('input', function (e) {
+                    let v = e.target.value.replace(/\D/g, '');
+                    if (v === "") { e.target.value = ""; return; }
+                    v = (parseInt(v) / 100).toFixed(2) + '';
+                    v = v.replace(".", ",");
+                    v = v.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+                    e.target.value = "R$ " + v;
+                    atualizarPreview();
+                });
+            });
+
+            function atualizarPreview() {
+                let bruto = converterParaFloat(document.getElementById('valor_bruto_mascara').value);
+                let inssJaPago = converterParaFloat(document.getElementById('inss_retido_mascara').value);
+                let dependentes = parseInt(document.getElementById('dependentes').value) || 0;
+
+                // Puxa o valor numérico digitado no input do ISS, e caso esteja vazio, trata como 0
+                let aliquotaIssInput = document.getElementById('aliquota_iss').value;
+                let issPercent = (parseFloat(aliquotaIssInput) || 0) / 100;
+
+                document.getElementById('valor_bruto_real').value = bruto;
+                document.getElementById('inss_retido_real').value = inssJaPago;
+
+                if (bruto === 0) {
+                    document.getElementById('preview-bruto').innerText = "R$ 0,00";
+                    document.getElementById('preview-base-irrf').innerText = "R$ 0,00";
+                    document.getElementById('preview-inss').innerText = "R$ 0,00";
+                    document.getElementById('preview-irrf').innerText = "R$ 0,00";
+                    document.getElementById('preview-iss').innerText = "R$ 0,00";
+                    document.getElementById('preview-liquido').innerText = "R$ 0,00";
+                    return;
+                }
+
+                const tetoDescontoINSS = 932.31;
+                let inssCalculado = bruto * 0.11;
+                let espacoTeto = tetoDescontoINSS - inssJaPago;
+                let inssRPA = Math.max(0, Math.min(inssCalculado, espacoTeto));
+
+                let baseIRRF = bruto - inssRPA - (dependentes * 189.59);
+                let irrf = 0;
+
+                if (baseIRRF > 5000 && baseIRRF <= 7350) {
+                    let irrfTabela = (baseIRRF * 0.275) - 908.73;
+                    let redutor = 978.62 - (0.133145 * baseIRRF);
+                    irrf = Math.max(0, irrfTabela - redutor);
+                } else if (baseIRRF > 7350) {
+                    irrf = Math.max(0, (baseIRRF * 0.275) - 908.73);
+                }
+
+                if (irrf < 10.00) { irrf = 0; }
+
+                let iss = bruto * issPercent;
+                let liquido = bruto - inssRPA - irrf - iss;
+
+                document.getElementById('preview-bruto').innerText = formatadorBRL.format(bruto);
+                document.getElementById('preview-base-irrf').innerText = formatadorBRL.format(baseIRRF);
+                document.getElementById('preview-inss').innerText = formatadorBRL.format(inssRPA);
+
+                // --- NOVA REGRA VISUAL DE ISENÇÃO DO IRRF APLICADA AQUI ---
+                if (baseIRRF <= 5000 && bruto > 0) {
+                    document.getElementById('preview-irrf').innerHTML = "R$ 0,00 <span style='color: #4ade80; font-size: 0.8rem; font-weight: normal; margin-left: 5px;'>(Isento)</span>";
+                } else {
+                    document.getElementById('preview-irrf').innerText = formatadorBRL.format(irrf);
+                }
+                // -----------------------------------------------------------
+
+                document.getElementById('preview-iss').innerText = formatadorBRL.format(iss);
+                document.getElementById('preview-liquido').innerText = formatadorBRL.format(liquido);
+            }
+
+            document.querySelectorAll('.calculo-trigger').forEach(input => {
+                input.addEventListener('change', atualizarPreview);
+                input.addEventListener('input', atualizarPreview); // Adicionado para reagir imediatamente ao digitar no ISS
+            });
+
+        });
+    </script>
+</body>
+
+</html>

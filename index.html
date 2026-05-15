@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Nexus Contábil | Especialistas no Terceiro Setor e PMEs</title>
+    <meta name="description" content="Consultoria contábil estratégica e tecnologia SaaS para Organizações da Sociedade Civil e Pequenas Empresas em Fortaleza.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nexus Contábil | Gestão Estratégica para OSCs">
+    <meta property="og:description" content="Segurança jurídica e inteligência financeira para o Terceiro Setor. Conheça nossa Calculadora RPA.">
+    <meta property="og:url" content="https://nexuscontabil.com.br/index.html">
+    <meta property="og:site_name" content="Nexus Contábil">
+    <meta property="og:image" content="https://nexuscontabil.com.br/og_image.png">
+    <meta property="og:image:type" content="image/png">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* =========================================================
+           ESTILOS ESPECÍFICOS DA PÁGINA INICIAL (HOME)
+           ========================================================= */
+           
+        /* 1. HERO SECTION */
+        .hero-home {
+            min-height: 85vh;
+            background: linear-gradient(135deg, rgba(10, 79, 79, 0.95) 0%, rgba(6, 56, 56, 0.98) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            border-bottom: 5px solid var(--dourado);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-home h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-home h1 span {
+            color: var(--dourado);
+            font-style: italic;
+        }
+
+        .hero-home p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: var(--dourado);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-hero-primary:hover {
+            background: #b38530;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(200, 151, 58, 0.3);
+        }
+
+        .btn-hero-outline {
+            background: transparent;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 2px solid white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-hero-outline:hover {
+            background: white;
+            color: var(--verde-escuro);
+            transform: translateY(-3px);
+        }
+
+        /* 2. ESTATÍSTICAS / PROVA SOCIAL */
+        .stats-section {
+            background: white;
+            padding: 4rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            position: relative;
+            margin-top: -30px;
+            z-index: 10;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--verde-escuro);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            color: var(--texto-suave);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* BOTÕES DE SECÇÃO (Padrão para os botões "Ver mais") */
+        .btn-section {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--verde-escuro);
+            color: var(--verde-escuro);
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-section:hover {
+            background: var(--verde-escuro);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 3. BLOG SECÇÃO */
+        .home-blog-section {
+            padding: 6rem 0;
+            background-color: #f8fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--verde-escuro);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--texto-suave);
+            font-size: 1.1rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--borda);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 79, 79, 0.12);
+            border-color: transparent;
+        }
+
+        .blog-img-wrap {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .blog-card:hover .blog-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--dourado);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .blog-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-meta { font-size: 0.85rem; color: #94a3b8; font-weight: 600; margin-bottom: 1rem; }
+        .blog-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--verde-escuro); margin-bottom: 1rem; line-height: 1.4; transition: color 0.3s; }
+        .blog-card:hover .blog-title { color: var(--dourado); }
+        .blog-excerpt { color: var(--texto-suave); margin-bottom: 2rem; flex-grow: 1; font-size: 0.95rem; line-height: 1.6; }
+        .blog-link { color: var(--verde-escuro); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; transition: 0.3s; }
+        .blog-link::after { content: '→'; transition: transform 0.3s; }
+        .blog-card:hover .blog-link { color: var(--dourado); }
+        .blog-card:hover .blog-link::after { transform: translateX(5px); }
+
+        /* 4. CTA SECTIONS */
+        .cta-section { background: var(--verde-escuro); padding: 5rem 2rem; text-align: center; color: white; border-top: 4px solid var(--dourado); }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        @media(max-width: 768px) {
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .hero-buttons a { width: 100%; text-align: center; }
+            .stats-section { margin-top: 0; border-radius: 0; box-shadow: none; border-bottom: 1px solid var(--borda); }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo Nexus Contábil" style="max-height: 50px; width: 220px; display: block;">
+                </a>
+            </div>
+            <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" style="color: var(--dourado);">Home</a></li>
+                    <li><a href="solucoes.html" class="nav-link">Soluções</a></li>
+                    <li><a href="quem_somos.html" class="nav-link">Equipe</a></li>
+                    <li><a href="materiais.html" class="nav-link">Materiais</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li class="nav-destaque"><a href="area_cliente.html" class="btn-nav-outline">Área do Cliente</a></li>
+                    <li class="nav-destaque"><a href="calculadora_rpa.html" class="btn-nav-solid">Calculadora RPA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-home">
+            <div class="hero-content" data-anime="up">
+                <h1>Contabilidade Estratégica para o <span>Terceiro Setor</span> e PMEs</h1>
+                <p>Muito além de emitir guias. Entregamos segurança jurídica, inteligência financeira e tecnologia SaaS para garantir a transparência da sua Organização da Sociedade Civil.</p>
+                <div class="hero-buttons">
+                    <a href="calculadora_rpa.html" class="btn-hero-primary">Usar a Calculadora RPA</a>
+                    <a href="contato.html" class="btn-hero-outline">Falar com Consultor</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section" data-anime="up">
+            <div class="stat-item">
+                <div class="stat-number">+20</div>
+                <div class="stat-text">Anos de Experiência</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-text">Adequação à ITG 2002</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">+500</div>
+                <div class="stat-text">RPAs Processados</div>
+            </div>
+        </section>
+
+        <section style="padding: 6rem 2rem; background-color: white;">
+            <div class="container">
+                <div class="section-title" data-anime="up" style="margin-bottom: 4rem;">
+                    <h2>Nossas Especialidades</h2>
+                    <p>Gestão completa e blindagem jurídica para o seu negócio.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="padding: 2rem; border-radius: 16px; background: #f8fafc; border: 1px solid var(--borda);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏢</div>
+                        <h3 style="color: var(--verde-escuro); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Legalização</h3>
+                        <p style="color: var(--texto-suave); font-size: 0.95rem; line-height: 1.6;">Constituição de OSCs, registo de atas, estatutos e obtenção de CNPJ com agilidade.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 16px; background: #f8fafc; border: 1px solid var(--borda);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                        <h3 style="color: var(--verde-escuro); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">ITG 2002</h3>
+                        <p style="color: var(--texto-suave); font-size: 0.95rem; line-height: 1.6;">Escrituração rigorosa para o Terceiro Setor, com separação por centro de custos.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 16px; background: #f8fafc; border: 1px solid var(--borda);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚖️</div>
+                        <h3 style="color: var(--verde-escuro); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">CEBAS</h3>
+                        <p style="color: var(--texto-suave); font-size: 0.95rem; line-height: 1.6;">Consultoria para obtenção e renovação da imunidade tributária da sua entidade.</p>
+                    </div>
+                    <div style="padding: 2rem; border-radius: 16px; background: #f8fafc; border: 1px solid var(--borda);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">👥</div>
+                        <h3 style="color: var(--verde-escuro); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">DP e RH</h3>
+                        <p style="color: var(--texto-suave); font-size: 0.95rem; line-height: 1.6;">Folha de pagamento, eSocial, gestão de voluntários e emissão segura de RPA.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center;" data-anime="up">
+                    <a href="solucoes.html" class="btn-section">Ver todas as Soluções</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: var(--verde-escuro); padding: 5rem 2rem; color: white;">
+            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;" data-anime="up">
+                <div>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; color: white;">Contabilidade 100% Digital e Segura</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                        Os nossos clientes têm acesso exclusivo ao <strong>Portal Nexus ERP</strong>. Uma plataforma desenvolvida sob medida para centralizar toda a comunicação e documentação da sua empresa.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--dourado);">✓</span> Cofre Digital para Guias e Impostos</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--dourado);">✓</span> Abertura e acompanhamento de Chamados (Help Desk)</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--dourado);">✓</span> Motor de emissão de RPA com QrCode Antifraude</li>
+                    </ul>
+                    <a href="area_cliente.html" class="btn-hero-primary" style="display: inline-block;">Portal do Cliente</a>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">💻</div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem; color: white;">Tecnologia SaaS</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.6;">Sistema na nuvem acessível 24h por dia, encriptado de ponta a ponta, cumprindo rigorosamente as normas da LGPD.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 6rem 2rem; background-color: #f8fafc;">
+            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;" data-anime="up">
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Equipe Nexus Contábil" style="width: 100%; height: auto; display: block;">
+                </div>
+                <div>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--verde-escuro); margin-bottom: 1.5rem;">A Nossa Equipe</h2>
+                    <p style="color: var(--texto-suave); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
+                        Por trás de toda a tecnologia, existe um time de especialistas apaixonados pelo que fazem. Combinamos engenharia diagnóstica, consultoria contábil avançada e desenvolvimento de software para entregar os melhores resultados ao Terceiro Setor.
+                    </p>
+                    <a href="quem_somos.html" class="btn-section" style="margin-top: 0;">Conhecer a Equipe e Cases de Sucesso</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 5rem 2rem; background: linear-gradient(135deg, #c8973a 0%, #a1782e 100%); color: white; text-align: center;">
+            <div class="container" data-anime="up">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: white;">Biblioteca de Materiais Gratuitos</h2>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Baixe e-books, checklists e planilhas exclusivas criadas pelos nossos consultores para facilitar o dia a dia financeiro da sua entidade.
+                </p>
+                <a href="materiais.html" class="btn-hero-outline" style="background: white; color: #a1782e; border: none;">Nossos Materiais</a>
+            </div>
+        </section>
+
+        <section class="home-blog-section">
+            <div class="container">
+                <div class="section-title" data-anime="up">
+                    <h2>Novidades e Insights Fiscais</h2>
+                    <p>Fique por dentro das últimas mudanças tributárias e gestão de entidades.</p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card" data-anime="up" style="transition-delay: 0.1s;">
+                        <div class="blog-img-wrap">
+                            <span class="category-badge">Tributário</span>
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Auditoria Contábil">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">📅 15 Maio 2026</span>
+                            <h2 class="blog-title">Novas regras do CEBAS para 2026: O que muda?</h2>
+                            <p class="blog-excerpt">Entenda as recentes portarias publicadas pelos Ministérios e como elas afetam a renovação da imunidade tributária da sua OSC neste novo exercício fiscal.</p>
+                            <a href="artigo_cebas.html" class="blog-link">Ler artigo completo</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-anime="up" style="transition-delay: 0.2s;">
+                        <div class="blog-img-wrap">
+                            <span class="category-badge">Gestão</span>
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Reunião MROSC">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">📅 02 Maio 2026</span>
+                            <h2 class="blog-title">MROSC: Como evitar glosas na prestação de contas</h2>
+                            <p class="blog-excerpt">As falhas mais comuns cometidas por entidades do Terceiro Setor ao apresentar relatórios financeiros para o poder público e como nossa auditoria previne isso.</p>
+                            <a href="artigo_mrosc.html" class="blog-link">Ler artigo completo</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-anime="up" style="transition-delay: 0.3s;">
+                        <div class="blog-img-wrap">
+                            <span class="category-badge">Empresarial</span>
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="MEI para ME">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">📅 20 Abril 2026</span>
+                            <h2 class="blog-title">Quando é a hora certa de migrar de MEI para ME?</h2>
+                            <p class="blog-excerpt">Os sinais claros de que a sua empresa cresceu e precisa de um novo enquadramento tributário para evitar multas retroativas pesadas da Receita Federal.</p>
+                            <a href="artigo_mei.html" class="blog-link">Ler artigo completo</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-anime="up" style="transition-delay: 0.4s;">
+                        <div class="blog-img-wrap">
+                            <span class="category-badge" style="background: var(--verde-claro);">Tecnologia</span>
+                            <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=600&q=80" alt="Cálculos de RPA">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">📅 10 Maio 2026</span>
+                            <h2 class="blog-title">Mudanças nos Cálculos de RPA: O impacto no seu bolso</h2>
+                            <p class="blog-excerpt">As tabelas progressivas mudaram. Entenda como a nova retenção de INSS e IRRF afeta diretamente o valor líquido recebido pelos profissionais autônomos.</p>
+                            <a href="artigo_rpa.html" class="blog-link">Ler artigo completo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card" data-anime="up" style="transition-delay: 0.5s;">
+                        <div class="blog-img-wrap">
+                            <span class="category-badge" style="background: var(--dourado);">Terceiro Setor</span>
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Documentos MROSC">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">📅 12 Maio 2026</span>
+                            <h2 class="blog-title">Prestação de Contas no MROSC: Como evitar reprovações</h2>
+                            <p class="blog-excerpt">Descubra os erros mais comuns que as OSCs cometem ao justificar recursos públicos e como a organização documental pode blindar sua entidade.</p>
+                            <a href="artigo_mrosc.html" class="blog-link">Ler artigo completo</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-anime="up" style="transition-delay: 0.6s;">
+                        <div class="blog-img-wrap">
+                            <span class="category-badge" style="background: #0a4f4f;">Gestão PME</span>
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" alt="MEI ou Autônomo">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-meta">📅 14 Maio 2026</span>
+                            <h2 class="blog-title">MEI ou Autônomo? Qual a melhor escolha fiscal para 2026?</h2>
+                            <p class="blog-excerpt">Com as novas isenções do IRRF e reajustes no limite de faturamento, comparamos as vantagens tributárias entre atuar como Pessoa Física ou abrir um CNPJ.</p>
+                            <a href="artigo_mei.html" class="blog-link">Ler artigo completo</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div style="text-align: center;" data-anime="up">
+                    <a href="blog.html" class="btn-section"> Todas as postagens</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 4rem 2rem; background-color: white; border-top: 1px solid var(--borda);">
+            <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;" data-anime="up">
+                <div>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--verde-escuro); margin-bottom: 0.5rem;">Pronto para transformar a sua gestão?</h2>
+                    <p style="color: var(--texto-suave); font-size: 1.1rem;">Fale com um consultor especialista e agende um diagnóstico gratuito.</p>
+                </div>
+                <div>
+                    <a href="contato.html" class="btn-hero-primary" style="background: var(--verde-escuro); box-shadow: none;">Conversar Agora</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container" data-anime="up">
+                <h2>Otimize o pagamento dos seus Autônomos</h2>
+                <p>Experimente agora a nossa Ferramenta Gratuita de Cálculo de Recibo de Pagamento a Autônomo (RPA) com motor de retenção inteligente atualizado para 2026.</p>
+                <a href="calculadora_rpa.html" class="btn-hero-primary">Calculadora RPA</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <div class="logo-nome" style="color: white; margin-bottom: 1rem;">Nexus Contábil</div>
+                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7;">
+                    Especialistas em gestão contábil, segurança jurídica e transparência para o Terceiro Setor e Pequenas Empresas em Fortaleza e todo o Brasil.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Institucional</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quem_somos.html">Equipe & Cases</a></li>
+                    <li><a href="materiais.html">Materiais Gratuitos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Soluções</h4>
+                <ul class="footer-links">
+                    <li><a href="solucoes.html">Contabilidade para OSCs</a></li>
+                    <li><a href="solucoes-cebas.html">Certificação CEBAS</a></li>
+                    <li><a href="solucoes-pequenas-empresas.html">Pequenas Empresas & MEIs</a></li>
+                    <li><a href="contato.html">Abertura de Entidades</a></li>
+                    <li><a href="calculadora_rpa.html">Calculadora RPA 2026</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contato & Acesso</h4>
+                <ul class="footer-links">
+                    <li><a href="area_cliente.html" style="color: var(--dourado-claro); font-weight: bold;">Área do Cliente</a></li>
+                </ul>
+                <div style="margin-top: 1.2rem; color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.9;">
+                    <div>📍 Rua Dona Leopoldina, 800</div>
+                    <div style="padding-left: 1.4rem;">Centro, Fortaleza – CE</div>
+                    <div style="margin-top: 0.4rem;">📞 <a href="tel:+5585998261414" style="color: rgba(255,255,255,0.65);">(85) 9.9826.1414</a></div>
+                    <div style="margin-top: 0.4rem;">
+                        <a href="https://wa.me/5585998261414" target="_blank" rel="noopener noreferrer" style="color: #25d366; font-weight: 600;">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 Nexus Contábil. Todos os direitos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="politica_privacidade.html">Política de Privacidade</a>
+                    <span>|</span>
+                    <a href="admin_upload.php" class="admin-link" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem;">Acesso Restrito Nexus Contábil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5585998261414?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Nexus%20Contábil."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="whatsapp-text">Como posso ajudar?</span>
+        <div class="whatsapp-icon">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.475 2.025 7.775l-2.025 7.425 7.625-1.975c2.225 1.15 4.75 1.775 7.375 1.775 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.25 22.8c-.35.975-1.725 1.775-2.825 2.025-.75.175-1.725.325-4.875-1s-5.25-3.325-5.4-3.525c-.15-.2-1.25-1.65-1.25-3.15s.775-2.225 1.05-2.525c.275-.3.6-.375.8-.375s.4 0 .575.025c.175.025.425-.075.65.525s.775 1.9.85 2.05.125.325.025.525c-.1.2-.225.325-.375.5s-.3.4-.425.525c-.125.15-.275.3-.125.55s.675 1.1 1.45 1.825c.975.925 1.8 1.225 2.05 1.35s.425.1.575-.075c.15-.175.65-.75.825-1s.35-.225.575-.15c.25.075 1.575.75 1.85.875s.45.2.525.325c.075.125.075.75-.275 1.725z" fill="white" />
+            </svg>
+        </div>
+    </a>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <script src="js/script.js"></script>
+    <script>
+        // Animação de Scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('anime-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('[data-anime]').forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

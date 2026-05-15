@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <title>Materiais Educativos e Cartilhas | Nexus Contábil</title>
+    <meta name="description" content="Baixe gratuitamente e-books e checklists sobre CEBAS, MROSC e gestão tributária para o Terceiro Setor.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nexus Contábil | Gestão Estratégica para OSCs">
+    <meta property="og:description" content="Segurança jurídica e inteligência financeira para o Terceiro Setor. Conheça nossa Calculadora RPA.">
+    <meta property="og:url" content="https://nexuscontabil.com.br/index.html">
+    <meta property="og:site_name" content="Nexus Contábil">
+    <meta property="og:image" content="https://nexuscontabil.com.br/og_image.png">
+    <meta property="og:image:type" content="image/png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ESTILOS ESPECÍFICOS APENAS DA PÁGINA MATERIAIS (Livre de conflitos com o header) */
+        .hero-materiais {
+            background: var(--verde-escuro);
+            padding: 6rem 2rem;
+            color: white;
+            text-align: center;
+            border-bottom: 5px solid var(--dourado);
+        }
+
+        .hero-materiais-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-materiais h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+        }
+
+        .hero-materiais p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .materiais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .material-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--borda);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .material-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-hover);
+            border-color: var(--dourado-claro);
+        }
+
+        .material-img-wrap {
+            height: 220px;
+            background-color: #f1f5f9;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .material-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.5s ease;
+        }
+
+        .material-card:hover .material-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .tipo-material {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--verde);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tipo-dourado {
+            background: var(--dourado);
+        }
+
+        .material-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .material-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--verde);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .material-content p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .download-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .download-input {
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            background: #f8fafc;
+            color: var(--texto-suave);
+            transition: 0.3s;
+        }
+
+        .download-input:focus {
+            outline: none;
+            border-color: var(--dourado);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(200, 151, 58, 0.1);
+        }
+
+        .btn-download {
+            background: var(--dourado);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(200, 151, 58, 0.2);
+        }
+
+        .btn-download:hover {
+            background: #b38530;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(200, 151, 58, 0.3);
+        }
+
+        .cursos-box {
+            background: white;
+            border-radius: 24px;
+            padding: 4rem;
+            text-align: center;
+            box-shadow: var(--sombra);
+            border: 1px solid var(--borda);
+            margin-top: 2rem;
+        }
+
+        .cursos-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--verde);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .materiais-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cursos-box {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo Nexus Contábil" style="max-height: 50px; width: 220px; display: block;">
+                </a>
+            </div>
+            <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" style="color: var(--dourado);">Home</a></li>
+                    <li><a href="solucoes.html" class="nav-link">Soluções</a></li>
+                    <li><a href="quem_somos.html" class="nav-link">Equipe</a></li>
+                    <li><a href="materiais.html" class="nav-link">Materiais</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li class="nav-destaque"><a href="area_cliente.html" class="btn-nav-outline">Área do Cliente</a></li>
+                    <li class="nav-destaque"><a href="calculadora_rpa.html" class="btn-nav-solid">Calculadora RPA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-materiais" aria-labelledby="hero-title">
+            <div class="hero-materiais-inner" data-anime="up">
+                <span
+                    style="display: inline-block; color: var(--dourado-claro); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; font-size: 0.85rem;">Biblioteca
+                    Nexus Contábil</span>
+                <h1 id="hero-title">Capacitação e Inteligência para a Gestão do Terceiro Setor</h1>
+                <p>Baixe gratuitamente nossas cartilhas, e-books e checklists desenvolvidos por quem possui 20 anos de
+                    experiência em auditoria, conformidade e contabilidade de OSCs.</p>
+            </div>
+        </section>
+
+        <section class="section-pad">
+            <div class="container">
+                <div class="materiais-grid">
+
+                    <article class="material-card" data-anime="up" style="transition-delay: 0.1s;">
+                        <div class="material-img-wrap">
+                            <span class="tipo-material tipo-dourado">Checklist Definitivo</span>
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Documentos e formulários sobre uma mesa">
+                        </div>
+                        <div class="material-content">
+                            <h3>Guia Prático e Checklist: Renovação do CEBAS 2026</h3>
+                            <p>Evite o indeferimento da sua imunidade tributária. O passo a passo exato da documentação
+                                exigida pelos Ministérios da Saúde, Educação e Assistência Social.</p>
+
+                            <form id="form-cebas" class="download-form">
+                                <input type="text" name="nome" class="download-input" placeholder="Seu nome" required>
+                                <input type="email" name="email" class="download-input" placeholder="Seu e-mail" required>
+                                <button type="submit" class="btn-download">Baixar Gratuitamente</button>
+                            </form>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-anime="up" style="transition-delay: 0.2s;">
+                        <div class="material-img-wrap">
+                            <span class="tipo-material">Cartilha Legal</span>
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Reunião de auditoria em contratos de fomento">
+                        </div>
+                        <div class="material-content">
+                            <h3>MROSC Sem Segredos: Prestação de Contas</h3>
+                            <p>Entenda as regras da Lei 13.019/2014 para a formalização de Termos de Fomento e
+                                Colaboração. Saiba como prestar contas ao poder público sem glosas.</p>
+
+                            <form id="form-mrosc" class="download-form">
+                                <input type="text" name="nome" class="download-input" placeholder="Seu nome" required>
+                                <input type="email" name="email" class="download-input" placeholder="Seu e-mail" required>
+                                <button type="submit" class="btn-download">Baixar Gratuitamente</button>
+                            </form>
+                        </div>
+                    </article>
+
+                    <article class="material-card" data-anime="up" style="transition-delay: 0.3s;">
+                        <div class="material-img-wrap">
+                            <span class="tipo-material">Guia Empresarial</span>
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Pessoas trabalhando no crescimento de uma pequena empresa">
+                        </div>
+                        <div class="material-content">
+                            <h3>De MEI para ME: Como expandir sem medo da Receita</h3>
+                            <p>Seu faturamento estourou o limite? Descubra o momento exato de fazer o desenquadramento e
+                                como o Simples Nacional pode ser vantajoso para a sua EPP.</p>
+
+                            <form id="form-mei" class="download-form">
+                                <input type="text" name="nome" class="download-input" placeholder="Seu nome" required>
+                                <input type="email" name="email" class="download-input" placeholder="Seu e-mail" required>
+                                <button type="submit" class="btn-download">Baixar Gratuitamente</button>
+                            </form>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-bottom: 4rem;">
+            <div class="cursos-box" data-anime="up">
+                <span class="pre-titulo">Capacitação Presencial ou Online</span>
+                <h2>Treinamentos Nexus Contábil</h2>
+                <p style="color: var(--texto-suave); font-size: 1.1rem; max-width: 700px; margin: 0 auto 2.5rem;">Além
+                    dos materiais gratuitos, a nossa equipe de especialistas realiza treinamentos focados na capacitação
+                    da diretoria e do financeiro da sua OSC sobre a ITG 2002 e eSocial.</p>
+                <a href="https://wa.me/5585998261414" target="_blank" class="btn btn-dourado"
+                    style="font-size: 1.1rem; padding: 1.2rem 3rem;">Agendar Reunião para Treinamento</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <div class="logo-nome" style="color: white; margin-bottom: 1rem;">Nexus Contábil</div>
+                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7;">
+                    Especialistas em gestão contábil, segurança jurídica e transparência para o Terceiro Setor e Pequenas Empresas em Fortaleza e todo o Brasil.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Institucional</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quem_somos.html">Equipe & Cases</a></li>
+                    <li><a href="materiais.html">Materiais Gratuitos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Soluções</h4>
+                <ul class="footer-links">
+                    <li><a href="solucoes.html">Contabilidade para OSCs</a></li>
+                    <li><a href="solucoes-cebas.html">Certificação CEBAS</a></li>
+                    <li><a href="solucoes-pequenas-empresas.html">Pequenas Empresas & MEIs</a></li>
+                    <li><a href="contato.html">Abertura de Entidades</a></li>
+                    <li><a href="calculadora_rpa.html">Calculadora RPA 2026</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contato & Acesso</h4>
+                <ul class="footer-links">
+                    <li><a href="area_cliente.html" style="color: var(--dourado-claro); font-weight: bold;">Área do Cliente</a></li>
+                </ul>
+                <div style="margin-top: 1.2rem; color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.9;">
+                    <div>📍 Rua Dona Leopoldina, 800</div>
+                    <div style="padding-left: 1.4rem;">Centro, Fortaleza – CE</div>
+                    <div style="margin-top: 0.4rem;">📞 <a href="tel:+5585998261414" style="color: rgba(255,255,255,0.65);">(85) 9.9826.1414</a></div>
+                    <div style="margin-top: 0.4rem;">
+                        <a href="https://wa.me/5585998261414" target="_blank" rel="noopener noreferrer" style="color: #25d366; font-weight: 600;">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 Nexus Contábil. Todos os direitos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="politica_privacidade.html">Política de Privacidade</a>
+                    <span>|</span>
+                    <a href="admin_upload.php" class="admin-link" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem;">Acesso Restrito Nexus Contábil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5585998261414?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Nexus%20Contábil."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="whatsapp-text">Como posso ajudar?</span>
+        <div class="whatsapp-icon">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.475 2.025 7.775l-2.025 7.425 7.625-1.975c2.225 1.15 4.75 1.775 7.375 1.775 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.25 22.8c-.35.975-1.725 1.775-2.825 2.025-.75.175-1.725.325-4.875-1s-5.25-3.325-5.4-3.525c-.15-.2-1.25-1.65-1.25-3.15s.775-2.225 1.05-2.525c.275-.3.6-.375.8-.375s.4 0 .575.025c.175.025.425-.075.65.525s.775 1.9.85 2.05.125.325.025.525c-.1.2-.225.325-.375.5s-.3.4-.425.525c-.125.15-.275.3-.125.55s.675 1.1 1.45 1.825c.975.925 1.8 1.225 2.05 1.35s.425.1.575-.075c.15-.175.65-.75.825-1s.35-.225.575-.15c.25.075 1.575.75 1.85.875s.45.2.525.325c.075.125.075.75-.275 1.725z"
+                    fill="white" />
+            </svg>
+        </div>
+    </a>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) { entry.target.classList.add('anime-visible'); }
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('[data-anime]').forEach((el) => observer.observe(el));
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+
+<script>
+    // Função universal para capturar o lead e forçar o download
+    function configurarDownload(formId, caminhoArquivoPdf, nomeDoMaterial) {
+        const form = document.getElementById(formId);
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Impede o recarregamento da página
+
+                // 1. Recolhe os dados do formulário e adiciona o nome do material
+                const formData = new FormData(form);
+                formData.append('material', nomeDoMaterial);
+
+                // 2. Envia os dados para o PHP em segundo plano (AJAX)
+                fetch('capturar_lead.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // 3. Avisa o utilizador e faz o download automático
+                    alert('Excelente! O seu material está a ser transferido.');
+
+                    const link = document.createElement('a');
+                    link.href = caminhoArquivoPdf;
+                    link.download = caminhoArquivoPdf.split('/').pop(); 
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    form.reset(); // Limpa os campos
+                })
+                .catch(error => {
+                    console.error('Erro ao guardar lead:', error);
+                    // Por precaução, se a base de dados falhar, entregamos o PDF na mesma para não frustrar o utilizador
+                    alert('O seu material está a ser transferido.');
+                    window.open(caminhoArquivoPdf, '_blank');
+                });
+            });
+        }
+    }
+
+    // Configurando os 3 formulários passando os PDFs e o NOME identificador de cada material
+    configurarDownload('form-cebas', 'materiais/Guia_CEBAS_2026.pdf', 'Guia CEBAS 2026');
+    configurarDownload('form-mrosc', 'materiais/MROSC_Prestacao_Contas.pdf', 'Cartilha MROSC');
+    configurarDownload('form-mei', 'materiais/Transicao_MEI_para_ME.pdf', 'Guia MEI para ME');
+</script>
+
+</html>

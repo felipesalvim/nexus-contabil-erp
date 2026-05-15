@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contabilidade consultiva para MEIs, Autônomos e EPPs em Fortaleza. Pague menos impostos legalmente e foque no crescimento do seu negócio com a Nexus Contábil.">
+    <title>Contabilidade para MEI, Autônomos e EPPs | Nexus Contábil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nexus Contábil | Gestão Estratégica para OSCs">
+    <meta property="og:description" content="Segurança jurídica e inteligência financeira para o Terceiro Setor. Conheça nossa Calculadora RPA.">
+    <meta property="og:url" content="https://nexuscontabil.com.br/index.html">
+    <meta property="og:site_name" content="Nexus Contábil">
+    <meta property="og:image" content="https://nexuscontabil.com.br/og_image.png">
+    <meta property="og:image:type" content="image/png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Estilos Específicos */
+        .hero-b2b {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde) 100%);
+            padding: 6rem 2rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-b2b::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-b2b-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-b2b h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-b2b p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .dores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .dor-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--borda);
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .dor-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--dourado-claro);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .dor-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #e63946;
+        }
+
+        .dor-card h3 {
+            color: var(--verde);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .dor-card p {
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+        }
+
+        .solucoes-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .solucao-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .solucao-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .solucao-row:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        .solucao-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--sombra);
+        }
+
+        .solucao-texto h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--verde);
+            margin-bottom: 1rem;
+        }
+
+        .solucao-texto p {
+            color: var(--texto-suave);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--dourado);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cta-banner {
+            background: var(--creme);
+            padding: 5rem 0;
+        }
+
+        .cta-box {
+            background: var(--verde);
+            border-radius: 24px;
+            padding: 4rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(10, 79, 79, 0.2);
+        }
+
+        .cta-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .solucao-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .solucao-row:nth-child(even) {
+                direction: ltr;
+            }
+
+            .hero-b2b {
+                padding: 4rem 1rem;
+            }
+
+            .cta-box {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo Nexus Contábil" style="max-height: 50px; width: 220px; display: block;">
+                </a>
+            </div>
+            <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" style="color: var(--dourado);">Home</a></li>
+                    <li><a href="solucoes.html" class="nav-link">Soluções</a></li>
+                    <li><a href="quem_somos.html" class="nav-link">Equipe</a></li>
+                    <li><a href="materiais.html" class="nav-link">Materiais</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li class="nav-destaque"><a href="area_cliente.html" class="btn-nav-outline">Área do Cliente</a></li>
+                    <li class="nav-destaque"><a href="calculadora_rpa.html" class="btn-nav-solid">Calculadora RPA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-b2b" aria-labelledby="hero-title">
+            <div class="hero-b2b-inner" data-anime="up">
+                <span class="pre-titulo" style="color: var(--dourado-claro);">Autônomos, MEIs e Pequenas Empresas</span>
+                <h1 id="hero-title">Sua empresa cresceu. A sua contabilidade acompanhou?</h1>
+                <p>Evite multas da Receita Federal, pague o mínimo de impostos exigido por lei e faça a transição de MEI
+                    para ME com a segurança de um escritório com 20 anos de tradição em Fortaleza.</p>
+                <a href="#contato" class="btn btn-dourado" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">Solicitar
+                    Diagnóstico Gratuito</a>
+            </div>
+        </section>
+
+        <section class="section-pad">
+            <div class="container">
+                <div class="secao-titulo" data-anime="up">
+                    <span class="pre-titulo">Os riscos de empreender sozinho</span>
+                    <h2 class="titulo-principal">Sinais de que você precisa de uma Contabilidade Consultiva urgente</h2>
+                </div>
+
+                <div class="dores-grid">
+                    <article class="dor-card" data-anime="up" style="transition-delay: 0.1s;">
+                        <div class="dor-icon" style="color: var(--dourado);">⚠️</div>
+                        <h3>Risco de Estourar o Limite do MEI</h3>
+                        <p>O seu faturamento está a aproximar-se dos R$ 81.000,00 anuais? Se ultrapassar sem
+                            planeamento, a Receita Federal pode cobrar impostos retroativos com juros pesados.
+                            Preparamos o desenquadramento seguro.</p>
+                    </article>
+
+                    <article class="dor-card" data-anime="up" style="transition-delay: 0.2s;">
+                        <div class="dor-icon" style="color: var(--dourado);">💸</div>
+                        <h3>Pagamento Desnecessário de Impostos</h3>
+                        <p>Muitas EPPs e MEs pagam mais impostos do que deveriam por estarem no anexo errado do Simples
+                            Nacional ou por desconhecerem o Fator R. Fazemos o seu planeamento tributário.</p>
+                    </article>
+
+                    <article class="dor-card" data-anime="up" style="transition-delay: 0.3s;">
+                        <div class="dor-icon" style="color: var(--dourado);">📑</div>
+                        <h3>Autônomos (RPA) na Malha Fina</h3>
+                        <p>Atuar como pessoa física pode gerar uma carga tributária pesada. Formalizar o seu negócio
+                            connosco pode reduzir os seus impostos consideravelmente.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad" style="background: white;">
+            <div class="container">
+                <div class="secao-titulo" data-anime="up">
+                    <span class="pre-titulo">Nossas Soluções</span>
+                    <h2 class="titulo-principal">Como a Nexus Contábil impulsiona o seu negócio</h2>
+                </div>
+
+                <div class="solucoes-lista">
+                    <div class="solucao-row">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Consultor financeiro" class="solucao-img" data-anime="left">
+                        <div class="solucao-texto" data-anime="right">
+                            <h3>Migração de MEI para ME / EPP</h3>
+                            <p>O sucesso do seu negócio exige um CNPJ que suporte o seu crescimento. Cuidamos de toda a
+                                burocracia do desenquadramento do MEI para Microempresa de forma rápida e sem paralisar
+                                as suas operações.</p>
+                            <ul class="checklist">
+                                <li>Análise de faturamento e risco de exclusão.</li>
+                                <li>Atualização na Junta Comercial e Receita.</li>
+                                <li>Enquadramento no Simples Nacional.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solucao-row">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Departamento pessoal" class="solucao-img" data-anime="right">
+                        <div class="solucao-texto" data-anime="left">
+                            <h3>Departamento Pessoal (BPO)</h3>
+                            <p>Assumimos 100% da sua rotina trabalhista, eliminando riscos de processos na Justiça do
+                                Trabalho.</p>
+                            <ul class="checklist">
+                                <li>Emissão de Folha de Pagamento e Pró-labore.</li>
+                                <li>Envio de obrigações: eSocial, DCTFWeb, FGTS.</li>
+                                <li>Gestão de admissões, férias e rescisões.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="solucao-row">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Abertura de empresa" class="solucao-img" data-anime="left">
+                        <div class="solucao-texto" data-anime="right">
+                            <h3>Abertura de Empresas</h3>
+                            <p>Abrimos o seu CNPJ estruturando a melhor configuração tributária (lucro presumido ou
+                                Simples com Fator R).</p>
+                            <ul class="checklist">
+                                <li>Obtenção de Alvará de Funcionamento.</li>
+                                <li>Liberação para Nota Fiscal (NFS-e).</li>
+                                <li>Abertura 100% digital e ágil.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="cta-banner">
+            <div class="container">
+                <div class="cta-box" data-anime="up">
+                    <span
+                        style="display: inline-block; background: rgba(200,151,58,0.3); color: var(--dourado-claro); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">Assessoria
+                        Estratégica</span>
+                    <h2>Dê o próximo passo com segurança.</h2>
+                    <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+                        Fale diretamente com os nossos consultores pelo WhatsApp. Faremos uma análise tributária inicial
+                        do seu cenário de forma rápida e sem compromisso.</p>
+                    <a href="https://wa.me/5585998261414" target="_blank" class="btn btn-dourado"
+                        style="font-size: 1.1rem; padding: 1.2rem 3rem;">Falar com um Especialista Agora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <div class="logo-nome" style="color: white; margin-bottom: 1rem;">Nexus Contábil</div>
+                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7;">
+                    Especialistas em gestão contábil, segurança jurídica e transparência para o Terceiro Setor e Pequenas Empresas em Fortaleza e todo o Brasil.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Institucional</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quem_somos.html">Equipe & Cases</a></li>
+                    <li><a href="materiais.html">Materiais Gratuitos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Soluções</h4>
+                <ul class="footer-links">
+                    <li><a href="solucoes.html">Contabilidade para OSCs</a></li>
+                    <li><a href="solucoes-cebas.html">Certificação CEBAS</a></li>
+                    <li><a href="solucoes-pequenas-empresas.html">Pequenas Empresas & MEIs</a></li>
+                    <li><a href="contato.html">Abertura de Entidades</a></li>
+                    <li><a href="calculadora_rpa.html">Calculadora RPA 2026</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contato & Acesso</h4>
+                <ul class="footer-links">
+                    <li><a href="area_cliente.html" style="color: var(--dourado-claro); font-weight: bold;">Área do Cliente</a></li>
+                </ul>
+                <div style="margin-top: 1.2rem; color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.9;">
+                    <div>📍 Rua Dona Leopoldina, 800</div>
+                    <div style="padding-left: 1.4rem;">Centro, Fortaleza – CE</div>
+                    <div style="margin-top: 0.4rem;">📞 <a href="tel:+5585998261414" style="color: rgba(255,255,255,0.65);">(85) 9.9826.1414</a></div>
+                    <div style="margin-top: 0.4rem;">
+                        <a href="https://wa.me/5585998261414" target="_blank" rel="noopener noreferrer" style="color: #25d366; font-weight: 600;">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 Nexus Contábil. Todos os direitos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="politica_privacidade.html">Política de Privacidade</a>
+                    <span>|</span>
+                    <a href="admin_upload.php" class="admin-link" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem;">Acesso Restrito Nexus Contábil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5585998261414?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Nexus%20Contábil."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="whatsapp-text">Como posso ajudar?</span>
+        <div class="whatsapp-icon">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.475 2.025 7.775l-2.025 7.425 7.625-1.975c2.225 1.15 4.75 1.775 7.375 1.775 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.25 22.8c-.35.975-1.725 1.775-2.825 2.025-.75.175-1.725.325-4.875-1s-5.25-3.325-5.4-3.525c-.15-.2-1.25-1.65-1.25-3.15s.775-2.225 1.05-2.525c.275-.3.6-.375.8-.375s.4 0 .575.025c.175.025.425-.075.65.525s.775 1.9.85 2.05.125.325.025.525c-.1.2-.225.325-.375.5s-.3.4-.425.525c-.125.15-.275.3-.125.55s.675 1.1 1.45 1.825c.975.925 1.8 1.225 2.05 1.35s.425.1.575-.075c.15-.175.65-.75.825-1s.35-.225.575-.15c.25.075 1.575.75 1.85.875s.45.2.525.325c.075.125.075.75-.275 1.725z"
+                    fill="white" />
+            </svg>
+        </div>
+    </a>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

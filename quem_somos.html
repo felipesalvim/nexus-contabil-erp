@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conheça a equipe de especialistas e a governança da Nexus Contábil. 20 anos de dedicação exclusiva ao Terceiro Setor.">
+    <title>Quem Somos | Especialistas e Governança | Nexus Contábil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nexus Contábil | Gestão Estratégica para OSCs">
+    <meta property="og:description" content="Segurança jurídica e inteligência financeira para o Terceiro Setor. Conheça nossa Calculadora RPA.">
+    <meta property="og:url" content="https://nexuscontabil.com.br/index.html">
+    <meta property="og:site_name" content="Nexus Contábil">
+    <meta property="og:image" content="https://nexuscontabil.com.br/og_image.png">
+    <meta property="og:image:type" content="image/png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Estilos Específicos */
+        .page-hero {
+            min-height: 35vh;
+            background: var(--verde-escuro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: backgroundDrift 60s linear infinite;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sobre-texto h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--verde);
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .sobre-texto p {
+            color: var(--texto-suave);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .valores-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: var(--sombra);
+            border: 1px solid var(--borda);
+        }
+
+        .valores-box h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--verde);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--borda);
+            padding-bottom: 0.5rem;
+        }
+
+        .valores-box p {
+            color: var(--texto-suave);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .lideranca {
+            background: white;
+        }
+
+        .lideranca-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .lideranca-img-wrap {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--sombra-hover);
+        }
+
+        .lideranca-img-wrap img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .selo-crc {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dourado);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--sombra);
+            border: 1px solid var(--borda);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--dourado);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .aspas {
+            font-size: 4rem;
+            color: rgba(200, 151, 58, 0.2);
+            font-family: 'Playfair Display', serif;
+            line-height: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-texto {
+            font-size: 1.05rem;
+            color: var(--texto-suave);
+            font-style: italic;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .case-autor {
+            border-top: 1px solid var(--borda);
+            padding-top: 1.5rem;
+        }
+
+        .case-autor h4 {
+            color: var(--verde);
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .case-autor span {
+            color: var(--dourado);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-autor p {
+            color: var(--texto-suave);
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+        }
+
+        @media(max-width: 768px) {
+
+            .sobre-grid,
+            .lideranca-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo Nexus Contábil" style="max-height: 50px; width: 220px; display: block;">
+                </a>
+            </div>
+            <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="siteNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" style="color: var(--dourado);">Home</a></li>
+                    <li><a href="solucoes.html" class="nav-link">Soluções</a></li>
+                    <li><a href="quem_somos.html" class="nav-link">Equipe</a></li>
+                    <li><a href="materiais.html" class="nav-link">Materiais</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li class="nav-destaque"><a href="area_cliente.html" class="btn-nav-outline">Área do Cliente</a></li>
+                    <li class="nav-destaque"><a href="calculadora_rpa.html" class="btn-nav-solid">Calculadora RPA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero" aria-labelledby="hero-title">
+            <div class="container" data-anime="up">
+                <h1 id="hero-title">Governança e Especialistas</h1>
+                <p>20 anos de tradição, ética e segurança jurídica aplicados exclusivamente à contabilidade do Terceiro
+                    Setor.</p>
+            </div>
+        </section>
+
+        <section class="section-pad">
+            <div class="container">
+                <div class="sobre-grid">
+                    <div class="sobre-texto" data-anime="left">
+                        <h2>Foco exclusivo em resultados sociais.</h2>
+                        <p>A Nexus Contábil nasceu com o propósito de oferecer suporte técnico especializado às
+                            Organizações da Sociedade Civil (OSCs). Entendemos que a transparência financeira e a
+                            conformidade legal são os verdadeiros pilares para a captação de recursos.</p>
+                        <p>Com sede em Fortaleza e atuação nacional, guiamos fundações, associações e entidades
+                            religiosas por cenários fiscais complexos, transformando a burocracia contábil em uma
+                            alavanca para o sucesso de projetos transformadores.</p>
+                    </div>
+                    <div class="valores-box" data-anime="right">
+                        <h3>Nossa Missão</h3>
+                        <p>Oferecer soluções contábeis, fiscais e trabalhistas que fortaleçam a governança e ampliem o
+                            impacto social positivo das OSCs em todo o Brasil.</p>
+                        <h3>Nossa Visão</h3>
+                        <p style="margin-bottom: 0;">Ser reconhecida como a maior, mais segura e mais tecnológica
+                            assessoria contábil especializada no Terceiro Setor do país.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad lideranca" aria-labelledby="lideranca-title">
+            <div class="container">
+                <div class="lideranca-grid">
+                    <div class="lideranca-img-wrap" data-anime="left">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Diretoria da Nexus Contábil" loading="lazy">
+                        <div class="selo-crc">Registro CRC Ativo</div>
+                    </div>
+                    <div class="lideranca-texto" data-anime="right">
+                        <span class="pre-titulo">Nossa Liderança</span>
+                        <h2 id="lideranca-title" class="titulo-principal">Profissionais que entendem de números — e de
+                            pessoas.</h2>
+                        <p style="color: var(--texto-suave); font-size: 1.1rem; margin-bottom: 1.5rem;">É experiência,
+                            identificação com causas sociais e uma equipe multiprofissional a serviço da
+                            sustentabilidade das organizações.</p>
+                        <ul style="list-style: none; margin-top: 2rem;">
+                            <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
+                                <span style="color: var(--dourado); font-size: 1.5rem; line-height: 1;">✓</span>
+                                <div>
+                                    <strong style="color: var(--verde); font-size: 1.1rem;">Governança e
+                                        Compliance</strong>
+                                    <p style="color: var(--texto-suave); font-size: 0.95rem;">Auditoria contábil
+                                        rigorosa para blindar a sua instituição contra glosas e multas.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                                <span style="color: var(--dourado); font-size: 1.5rem; line-height: 1;">✓</span>
+                                <div>
+                                    <strong style="color: var(--verde); font-size: 1.1rem;">Atendimento
+                                        Consultivo</strong>
+                                    <p style="color: var(--texto-suave); font-size: 0.95rem;">Cada cliente recebe
+                                        acompanhamento personalizado com foco em decisões estratégicas.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad" aria-labelledby="cases-title">
+            <div class="container">
+                <div class="secao-titulo" data-anime="up">
+                    <span class="pre-titulo">Histórias Reais, Impactos Reais</span>
+                    <h2 id="cases-title" class="titulo-principal">A confiança de quem transforma vidas.</h2>
+                    <p class="subtitulo-texto">Gestores e idealizadores de OSCs que contam com a Nexus Contábil
+                        compartilham suas
+                        experiências.</p>
+                </div>
+
+                <div class="cases-grid">
+                    <article class="case-card" data-anime="up" style="transition-delay: 0.1s;">
+                        <div class="aspas">"</div>
+                        <p class="case-texto">A Nexus Contábil presta um serviço de excelência ao NUTEP. Nos sentimos
+                            seguros com a competência e responsabilidade que toda equipe dispõe ao longo desses anos de
+                            parceria. A seriedade no desempenho, competência e zelo no trabalho são as características
+                            fundamentais da Nexus Contábil.</p>
+                        <div class="case-autor">
+                            <h4>Lêda Maria da Costa Pinheiro Frota</h4>
+                            <span>Diretora</span>
+                            <p>Núcleo de Tratamento e Estimulação Precoce (NUTEP)</p>
+                        </div>
+                    </article>
+
+                    <article class="case-card" data-anime="up" style="transition-delay: 0.2s;">
+                        <div class="aspas">"</div>
+                        <p class="case-texto">A Nexus Contábil é parceira estratégica da Voar, contribuindo não apenas
+                            com a
+                            execução técnica, mas também com orientações que fortalecem nossa governança, organização
+                            financeira e capacidade de prestação de contas. Permite focar no que é essencial.</p>
+                        <div class="case-autor">
+                            <h4>Eraldo Noronha</h4>
+                            <span>Diretor Executivo</span>
+                            <p>Associação Voar</p>
+                        </div>
+                    </article>
+
+                    <article class="case-card" data-anime="up" style="transition-delay: 0.3s;">
+                        <div class="aspas">"</div>
+                        <p class="case-texto">A Nexus Contábil tem toda a importância para nós. Tanto na organização, no
+                            profissionalismo como na segurança que temos ao saber que estamos nas melhores mãos.</p>
+                        <div class="case-autor" style="margin-top: auto;">
+                            <h4>Joana Clemente</h4>
+                            <span>Relações Institucionais</span>
+                            <p>Iprede</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <div class="footer-col">
+                <div class="logo-nome" style="color: white; margin-bottom: 1rem;">Nexus Contábil</div>
+                <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.7;">
+                    Especialistas em gestão contábil, segurança jurídica e transparência para o Terceiro Setor e Pequenas Empresas em Fortaleza e todo o Brasil.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Institucional</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quem_somos.html">Equipe & Cases</a></li>
+                    <li><a href="materiais.html">Materiais Gratuitos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Soluções</h4>
+                <ul class="footer-links">
+                    <li><a href="solucoes.html">Contabilidade para OSCs</a></li>
+                    <li><a href="solucoes-cebas.html">Certificação CEBAS</a></li>
+                    <li><a href="solucoes-pequenas-empresas.html">Pequenas Empresas & MEIs</a></li>
+                    <li><a href="contato.html">Abertura de Entidades</a></li>
+                    <li><a href="calculadora_rpa.html">Calculadora RPA 2026</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contato & Acesso</h4>
+                <ul class="footer-links">
+                    <li><a href="area_cliente.html" style="color: var(--dourado-claro); font-weight: bold;">Área do Cliente</a></li>
+                </ul>
+                <div style="margin-top: 1.2rem; color: rgba(255,255,255,0.65); font-size: 0.88rem; line-height: 1.9;">
+                    <div>📍 Rua Dona Leopoldina, 800</div>
+                    <div style="padding-left: 1.4rem;">Centro, Fortaleza – CE</div>
+                    <div style="margin-top: 0.4rem;">📞 <a href="tel:+5585998261414" style="color: rgba(255,255,255,0.65);">(85) 9.9826.1414</a></div>
+                    <div style="margin-top: 0.4rem;">
+                        <a href="https://wa.me/5585998261414" target="_blank" rel="noopener noreferrer" style="color: #25d366; font-weight: 600;">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 Nexus Contábil. Todos os direitos reservados.</p>
+                <div class="footer-legal-links">
+                    <a href="politica_privacidade.html">Política de Privacidade</a>
+                    <span>|</span>
+                    <a href="admin_upload.php" class="admin-link" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem;">Acesso Restrito Nexus Contábil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5585998261414?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Nexus%20Contábil."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="whatsapp-text">Como posso ajudar?</span>
+        <div class="whatsapp-icon">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.475 2.025 7.775l-2.025 7.425 7.625-1.975c2.225 1.15 4.75 1.775 7.375 1.775 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.25 22.8c-.35.975-1.725 1.775-2.825 2.025-.75.175-1.725.325-4.875-1s-5.25-3.325-5.4-3.525c-.15-.2-1.25-1.65-1.25-3.15s.775-2.225 1.05-2.525c.275-.3.6-.375.8-.375s.4 0 .575.025c.175.025.425-.075.65.525s.775 1.9.85 2.05.125.325.025.525c-.1.2-.225.325-.375.5s-.3.4-.425.525c-.125.15-.275.3-.125.55s.675 1.1 1.45 1.825c.975.925 1.8 1.225 2.05 1.35s.425.1.575-.075c.15-.175.65-.75.825-1s.35-.225.575-.15c.25.075 1.575.75 1.85.875s.45.2.525.325c.075.125.075.75-.275 1.725z"
+                    fill="white" />
+            </svg>
+        </div>
+    </a>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

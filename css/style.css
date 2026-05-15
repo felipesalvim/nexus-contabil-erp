@@ -1,0 +1,196 @@
+/* ==========================================================================
+   NEXUS CONTÁBIL - FOLHA DE ESTILOS PRINCIPAL
+   ========================================================================== */
+
+/* 1. VARIÁVEIS GLOBAIS */
+:root {
+    --verde: #0a4f4f;
+    --verde-medio: #0d6b6b;
+    --verde-claro: #147369;
+    --verde-escuro: #063838;
+    --dourado: #c8973a;
+    --dourado-claro: #e6b758;
+    --creme: #fdfbf7;
+    --branco: #ffffff;
+    --texto: #333333;
+    --texto-suave: #555555;
+    --borda: #eae1d5;
+    --sombra: 0 4px 15px rgba(0,0,0,0.05);
+    --sombra-hover: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* 2. RESET E TIPOGRAFIA BASE */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background-color: var(--creme); color: var(--texto); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.section-pad { padding: 6rem 0; }
+
+/* 3. TÍTULOS E UTILITÁRIOS */
+.secao-titulo { text-align: center; margin-bottom: 3.5rem; }
+.pre-titulo { display: inline-block; font-size: 0.75rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); font-weight: 700; margin-bottom: 0.75rem; }
+.titulo-principal { font-size: 2.2rem; color: var(--verde); line-height: 1.25; margin-bottom: 1rem; }
+.subtitulo-texto { max-width: 650px; margin: 0 auto; color: var(--texto-suave); font-size: 1.05rem; }
+
+/* 4. CABEÇALHO E NAVEGAÇÃO ÚNICA */
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--branco); border-bottom: 1px solid var(--borda); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.logo-nome { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--verde); transition: color 0.3s ease; }
+.logo-nome:hover { color: var(--dourado); }
+
+.site-nav ul { display: flex; gap: 2rem; align-items: center; }
+.site-nav a { color: var(--texto-suave); font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--verde); }
+.nav-destaque a { background: var(--verde); color: var(--branco); padding: 0.6rem 1.2rem; border-radius: 30px; box-shadow: 0 4px 10px rgba(10, 79, 79, 0.2); }
+.nav-destaque a:hover { background: var(--verde-claro); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(10, 79, 79, 0.3); color: var(--branco);}
+
+/* Botão Mobile (Hambúrguer) */
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 101; }
+.hamburger span { display: block; width: 25px; height: 3px; background: var(--verde); margin: 5px 0; border-radius: 3px; transition: 0.3s; }
+
+/* 5. BOTÕES GERAIS */
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.8rem; border-radius: 30px; font-weight: 700; transition: all 0.3s ease; cursor: pointer; text-align: center; border: none; font-family: 'DM Sans', sans-serif;}
+.btn-dourado { background: var(--dourado); color: var(--branco); box-shadow: 0 4px 15px rgba(200, 151, 58, 0.3); }
+.btn-dourado:hover { background: #b38530; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(200, 151, 58, 0.4); color: white;}
+.btn-verde { background: var(--verde); color: var(--branco); box-shadow: 0 4px 15px rgba(10, 79, 79, 0.2); }
+.btn-verde:hover { background: var(--verde-claro); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(10, 79, 79, 0.3); color: white;}
+
+/* 6. ANIMAÇÕES DE SCROLL (REVEAL) */
+[data-anime] { opacity: 0; transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+[data-anime="up"] { transform: translateY(50px); }
+[data-anime="left"] { transform: translateX(-50px); }
+[data-anime="right"] { transform: translateX(50px); }
+[data-anime].anime-visible { opacity: 1; transform: translate(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* 7. RODAPÉ (FOOTER ÚNICO) */
+
+/* ESTRUTURA DO NOVO FOOTER */
+.site-footer { background: var(--verde-escuro); color: white; padding: 4rem 0 0 0; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dourado-claro); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 0.8rem; }
+.footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.footer-links a:hover { color: white; padding-left: 5px; }
+
+/* BARRA INFERIOR */
+.footer-bottom { background: rgba(0,0,0,0.2); padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+.footer-legal-links { display: flex; gap: 15px; align-items: center; }
+.footer-legal-links a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-legal-links a:hover { text-decoration: underline; }
+.admin-link { opacity: 0.5; transition: 0.3s; color: var(--dourado-claro); }
+.admin-link:hover { opacity: 1; color: var(--dourado-claro) !important; }
+
+/* ESTILOS DOS BOTÕES DO MENU UNIFICADO */
+.site-nav .nav-destaque a { display: inline-block; padding: 0.5rem 1.2rem; border-radius: 30px; font-weight: 600; transition: all 0.3s ease; font-size: 0.9rem; }
+.site-nav .btn-nav-outline { border: 1px solid var(--borda); color: var(--verde); background: transparent; }
+.site-nav .btn-nav-outline:hover { background: rgba(10, 79, 79, 0.05); border-color: var(--verde); color: var(--verde); }
+.site-nav .btn-nav-solid { background: var(--dourado); color: white; border: 1px solid var(--dourado); box-shadow: 0 4px 10px rgba(200, 151, 58, 0.2); }
+.site-nav .btn-nav-solid:hover { background: var(--dourado-claro); border-color: var(--dourado-claro); transform: translateY(-2px); color: white; }
+
+/* WHATSAPP FLUTUANTE */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease;}
+.whatsapp-icon { width: 60px; height: 60px; background-color: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: transform 0.3s ease; }
+.whatsapp-icon svg { width: 32px; height: 32px; }
+.whatsapp-text { background-color: white; color: var(--verde-escuro); padding: 10px 20px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); border: 1px solid var(--borda); white-space: nowrap; opacity: 0; transform: translateX(20px); transition: all 0.3s ease; }
+.whatsapp-float:hover .whatsapp-text { opacity: 1; transform: translateX(0); }
+.whatsapp-float:hover .whatsapp-icon { transform: scale(1.1) rotate(5deg); background-color: #128c7e; }
+
+/* 8. RESPONSIVIDADE (MOBILE) */
+@media (max-width: 992px) {
+    .site-nav { position: absolute; top: 80px; left: 0; right: 0; background: var(--branco); padding: 2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1); flex-direction: column; clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease-in-out; }
+    .site-nav.aberto { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    .site-nav ul { flex-direction: column; gap: 1.5rem; width: 100%; text-align: center; }
+    .nav-destaque a { display: block; }
+    .hamburger { display: block; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float { bottom: 20px; right: 20px; }
+    .whatsapp-text { display: none; }
+}
+
+@media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .footer-bottom-inner { flex-direction: column; gap: 10px; text-align: center; }
+    .footer-links a:hover { padding-left: 0; }
+}
+
+/* 9. ESTILOS ESPECÍFICOS PARA A SEÇÃO DE FAQ (ACCORDION) */
+    .faq-accordion { display: flex; flex-direction: column; gap: 1rem; }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--dourado-claro);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--verde-escuro);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--dourado);
+        }
+
+        .faq-icon {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dourado);
+            transition: transform 0.4s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 2rem 1.5rem 2rem;
+            color: var(--texto-suave);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Classe ativa injetada via JS */
+        .faq-item.active .faq-question {
+            color: var(--verde);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg); /* Transforma o + em um X */
+            color: #ef4444; /* Vermelho suave para indicar fechamento */
+        }
+
+
+

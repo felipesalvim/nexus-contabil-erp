@@ -1,0 +1,22 @@
+[15-May-2026 13:02:05 America/Fortaleza] PHP Parse error:  syntax error, unexpected identifier "https" in /home2/omega381/contabil.nexusinnova.com.br/baixar_pdf.php on line 127
+[15-May-2026 13:43:07 America/Fortaleza] PHP Warning:  Undefined variable $password_db in /home2/omega381/contabil.nexusinnova.com.br/enviar_contato.php on line 25
+[15-May-2026 15:23:48 America/Fortaleza] PHP Warning:  Undefined variable $pdo in /home2/omega381/contabil.nexusinnova.com.br/gerar_pdf.php on line 73
+[15-May-2026 15:23:48 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function beginTransaction() on null in /home2/omega381/contabil.nexusinnova.com.br/gerar_pdf.php:73
+Stack trace:
+#0 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/gerar_pdf.php on line 73
+[15-May-2026 15:27:01 America/Fortaleza] PHP Warning:  Undefined variable $pdo in /home2/omega381/contabil.nexusinnova.com.br/gerar_pdf.php on line 73
+[15-May-2026 15:27:01 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function beginTransaction() on null in /home2/omega381/contabil.nexusinnova.com.br/gerar_pdf.php:73
+Stack trace:
+#0 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/gerar_pdf.php on line 73
+[15-May-2026 15:29:41 America/Fortaleza] PHP Warning:  Undefined variable $pdo in /home2/omega381/contabil.nexusinnova.com.br/admin_upload.php on line 108
+[15-May-2026 15:29:41 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home2/omega381/contabil.nexusinnova.com.br/admin_upload.php:108
+Stack trace:
+#0 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_upload.php on line 108
+[15-May-2026 15:29:51 America/Fortaleza] PHP Warning:  Undefined variable $pdo in /home2/omega381/contabil.nexusinnova.com.br/admin_upload.php on line 108
+[15-May-2026 15:29:51 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home2/omega381/contabil.nexusinnova.com.br/admin_upload.php:108
+Stack trace:
+#0 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_upload.php on line 108
