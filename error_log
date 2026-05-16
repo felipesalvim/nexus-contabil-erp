@@ -20,3 +20,38 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_upload.php on line 108
+[16-May-2026 10:31:56 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'omega381_nexus_rpa.chamados_suporte' doesn't exist in /home2/omega381/contabil.nexusinnova.com.br/admin_chamados.php:25
+Stack trace:
+#0 /home2/omega381/contabil.nexusinnova.com.br/admin_chamados.php(25): PDO->query('\r\n    SELECT c....')
+#1 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_chamados.php on line 25
+[16-May-2026 10:36:04 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'omega381_nexus_rpa.chamados_suporte' doesn't exist in /home2/omega381/contabil.nexusinnova.com.br/admin_chamados.php:25
+Stack trace:
+#0 /home2/omega381/contabil.nexusinnova.com.br/admin_chamados.php(25): PDO->query('\r\n    SELECT c....')
+#1 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_chamados.php on line 25
+[16-May-2026 10:50:22 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php:115
+Stack trace:
+#0 /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php(115): PDO->query('\r\n    SELECT uc...')
+#1 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php on line 115
+[16-May-2026 10:50:29 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php:115
+Stack trace:
+#0 /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php(115): PDO->query('\r\n    SELECT uc...')
+#1 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php on line 115
+[16-May-2026 10:50:37 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php:115
+Stack trace:
+#0 /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php(115): PDO->query('\r\n    SELECT uc...')
+#1 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php on line 115
+[16-May-2026 10:51:31 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php:115
+Stack trace:
+#0 /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php(115): PDO->query('\r\n    SELECT uc...')
+#1 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php on line 115
+[16-May-2026 10:51:34 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php:115
+Stack trace:
+#0 /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php(115): PDO->query('\r\n    SELECT uc...')
+#1 {main}
+  thrown in /home2/omega381/contabil.nexusinnova.com.br/admin_usuarios.php on line 115
