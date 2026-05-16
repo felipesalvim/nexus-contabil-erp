@@ -206,6 +206,3 @@ Projeto acadêmico desenvolvido no curso de **Análise e Desenvolvimento de Sist
 
 *Nexus Contábil ERP | Fortaleza, CE.*
 
-```
-
-```
