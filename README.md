@@ -1,10 +1,3 @@
-Com certeza! Remover informações sensíveis, como esquemas exatos de banco de dados, caminhos físicos do servidor, vulnerabilidades pendentes e detalhes internos de hospedagem, é uma prática essencial de segurança (prevenção contra *Information Disclosure*). Ao mesmo tempo, mantive toda a densidade técnica, as tabelas de funcionalidades e a arquitetura que valorizam o seu projeto para a banca e para o mercado.
-
-Também limpei os conflitos de merge (aquelas marcações de erro do Git) e incluí a sua equipa completa, bem como o link do repositório.
-
-Aqui está o seu `README.md` limpo, profissional e pronto para o GitHub. Basta copiar todo o bloco abaixo e substituir no seu ficheiro:
-
-```markdown
 # Nexus Contábil — Portal do Cliente & ERP Contábil
 
 > **Sistema web completo** para escritórios de contabilidade: portal do cliente com gestão de RPAs, cofre digital de documentos, sistema de chamados e painel administrativo.
